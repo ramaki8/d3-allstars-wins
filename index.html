@@ -2,18 +2,29 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>D3 Test</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>INFO474 Assn 3</title>
+        
+        <!--Link to style sheets-->
         <link rel="stylesheet" type="text/css" href="index.css">
         <link rel="stylesheet" type="text/css" href="plugins/tipsy.css">
-        <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js'></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        
+        <!--Link to scripts-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="d3/d3.v3.js"></script>
         <script type="text/javascript" src="plugins/tipsy.js"></script>
 
     </head>
     <body>
-        <ul></ul>
-        <p></p>
-         <script type="text/javascript" src="index.js">
-        </script>
+        <div class="container">
+            <h1>Wins vs Allstars for the Year 2010</h1>
+            <div id="chart"></div>
+            <script type="text/javascript" src="index.js"></script>
+            <a href="/writeup.html" class="btn btn-primary"><span class="fa fa-user"></span> Writeup</a>
+            <a href="https://github.com/ramaki8/d3-allstars-wins" target="_blank">
+            <img border="0" alt="GitHub Repo" src="https://cdn1.iconfinder.com/data/icons/simple-icons/128/github-128-black.png">
+        </div>
     </body>
 </html>

@@ -3,13 +3,15 @@
     font-size: 11px;
 }
 
-.selected {
-  fill: #afa2dc;
-  stroke: #2f225d;
-}
-
 .axis {
   font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
 }
 
 p {
@@ -21,14 +23,8 @@ p {
 .clear-button {
   font: 14px sans-serif;
   cursor: pointer;
-  color: black;
-}
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke: black;
-  shape-rendering: crispEdges;
+  fill: red;
+  font-weight: bold;
 }
 
 .brush .extent {

@@ -26,9 +26,7 @@ $(document).ready(function(){
                         i++;
                         //$('ul').append('<li id="' + key + '">' + val.name + ' ' + val.teamID + ' ' + val.W + '</li>');
                 });
-                console.log(allstarsWins);
                 for (var i = 0; i <= allstarsWins.length; i++) {
-                    console.log(allstarsWins[i]);
                 }
                 
                 
@@ -45,9 +43,9 @@ $(document).ready(function(){
                         .attr("fill-opacity", 0.5);                    
 			     }
                 
-                var w = 750;
-                var h = 500;
-                var padding = 30;
+                var w = 850;
+                var h = 600;
+                var padding = 60;
                 var color = color = d3.scale.ordinal()
                                         .domain(allstarsWins)
                                         .range(colorScale);
@@ -76,7 +74,7 @@ $(document).ready(function(){
                         .on("brushend", brushend);       
                 
                 //Create SVG element
-                var svg = d3.select("body")
+                var svg = d3.select("#chart")
                             .append("svg")
                             .attr("width", w)
                             .attr("height", h);
@@ -105,7 +103,7 @@ $(document).ready(function(){
                     .on("mouseover", onMouseover)
                     .on("mouseout", onMouseout)
                     .append('svg:title').text(function(d,i) {
-                            return d[2];
+                            return d[2] + ': ' + d[3] + ' wins';
                     });
                 
                 circles.on('mousedown', function(){
@@ -130,8 +128,8 @@ $(document).ready(function(){
                     get_button = d3.select(".clear-button");
                     if(get_button.empty() === true) {
                         clear_button = svg.append('text')
-                        .attr("y", 500)
-                        .attr("x", 650)
+                        .attr("y", 550)
+                        .attr("x", 630)
                         .attr("class", "clear-button")
                         .text("Clear Brush");
                     }
@@ -183,13 +181,15 @@ $(document).ready(function(){
                     .attr("class", "y axis")
                     .attr("transform", "translate(" + padding + ",0)")
                     .call(yAxis);
-                    
-                svg.append("defs").append("clipPath")
-                    .attr("id", "clip")
-                    .append("rect")
-                    .attr("width", w)
-                    .attr("height", h + 20);               
+                
+                svg.append("text")
+                    .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
+                    .attr("transform", "translate("+ (padding/2) +","+(h/2)+")rotate(-90)")  // text is drawn off the screen top left, move down and out and rotate
+                    .text("Number of Wins");
+                svg.append("text")
+                    .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
+                    .attr("transform", "translate("+ (w/2.5) +","+(h-(padding/3))+")")  // centre below axis
+                    .text("Number of Allstars");
 
         });
-
 });

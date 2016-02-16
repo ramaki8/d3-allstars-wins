@@ -6,13 +6,13 @@ class Allstar {
         $this->conn = $conn;
     }
     
-    public function search($q) {
+    public function search($year) {
         $sql = 'select teamID, count(playerID) AS playerCount from AllstarFull
                     where yearID = ?
                     group by teamID
                     order by teamID;';
         $stmt = $this->conn->prepare($sql);
-        $success = $stmt->execute(array($q));
+        $success = $stmt->execute(array($year));
         if (!$success) {
             var_dump($stmt->errorInfo());
             return false;
