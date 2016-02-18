@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>INFO474 Assn 3</title>
+        <title>Visualization</title>
         
         <!--Link to style sheets-->
         <link rel="stylesheet" type="text/css" href="index.css">
@@ -18,13 +18,20 @@
 
     </head>
     <body>
+        <div id="header" class="container-fluid">
+            <div class="col-md-8">
+                <h1>Visualization</h1>
+                <p id="subheader">All MLB teams' total wins vs their number of All Stars for the Year 2010.</p>
+            </div>
+            <div class="col-md-4">
+                <a href="/writeup.html" class="btn btn-primary"><span class="fa fa-user"></span> Writeup</a>
+                <a href="https://github.com/ramaki8/d3-allstars-wins" target="_blank"> <img border="0" alt="GitHub Repo" src="https://cdn1.iconfinder.com/data/icons/simple-icons/128/github-128-black.png"></a>
+            </div>
+        </div>
         <div class="container">
-            <h1>Wins vs Allstars for the Year 2010</h1>
             <div id="chart"></div>
             <script type="text/javascript" src="index.js"></script>
-            <a href="/writeup.html" class="btn btn-primary"><span class="fa fa-user"></span> Writeup</a>
-            <a href="https://github.com/ramaki8/d3-allstars-wins" target="_blank">
-            <img border="0" alt="GitHub Repo" src="https://cdn1.iconfinder.com/data/icons/simple-icons/128/github-128-black.png">
+           
         </div>
     </body>
 </html>

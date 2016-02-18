@@ -32,3 +32,21 @@ p {
   fill-opacity: .125;
   shape-rendering: crispEdges;
 }
+
+#header {
+    background-color: limegreen;
+    height: 100px;
+}
+
+#subheader {
+    font-size: 16px;
+}
+
+img {
+    width: 75px;
+    height: auto;
+}
+
+.col-md-4 {
+    text-align: right;
+}
