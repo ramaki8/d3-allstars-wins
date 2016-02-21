@@ -6,12 +6,12 @@ class Wins {
         $this->conn = $conn;
     }
     
-    public function search($year) {
-        $sql = 'select name, teamID, W, L from Teams
-                    WHERE yearID = ?
-                    order by teamID;';
+    public function search($start, $end) {
+        $sql = 'select name, teamID, W, L, yearID from Teams
+                    WHERE yearID BETWEEN ? AND ?
+                    order by teamID, yearID;';
         $stmt = $this->conn->prepare($sql);
-        $success = $stmt->execute(array($year));
+        $success = $stmt->execute(array($start, $end));
         if (!$success) {
             var_dump($stmt->errorInfo());
             return false;
