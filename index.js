@@ -8,7 +8,7 @@ $(document).ready(function(){
         
         // call the php that has the php array which is json_encoded
         // for retrieving the allstar data
-        $.getJSON('d3-allstars-wins/getdata.php?type=allstar', function(data) {
+        $.getJSON('/getdata.php?type=allstar', function(data) {
                 // Iterate through the php array and add the 
                 // team ID and playerCount of allstars to the javascript array
                 $.each(data, function(key, val) {
@@ -22,7 +22,7 @@ $(document).ready(function(){
         
         // call the php that has the php array which is json_encoded
         // for retrieving the wins data
-        $.getJSON('d3-allstars-wins/getdata.php?type=wins', function(data) {
+        $.getJSON('/getdata.php?type=wins', function(data) {
                 // Iterate through the php array and add the
                 // team's name and their wins to the javascript array
                 var i = 0;
